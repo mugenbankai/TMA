@@ -1,0 +1,83 @@
+html{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom:0;
+}
+#baseline, #badge{
+    text-align: center;
+    color: white;
+    display: block;
+    margin-bottom: 2em;
+}
+
+.square{
+    background-color: rgba(255,255,255,0.6);
+    border: 5px solid white;
+    border-radius: 1em;
+    width: 50vw;
+    text-align: center;
+    padding: 1em;
+    margin: 1em 2em;
+    display: inline-flex;
+    justify-content: space-between;
+    font-weight: bold;
+    box-shadow: 0px 8px 15px rgb(255 255 255 / 10%);
+    transition: all 0.3s ease 0s;
+}
+.square:hover{
+    background-color: rgba(247,184,37,0.6);
+    border: 5px solid rgb(247,184,37);
+    cursor: pointer;
+    box-shadow: 0px 15px 20px rgba(247,184,37, 15%);
+    transform: translateY(-7px);
+
+}
+#copyright{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+#top{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#connection{display: flex; }
+#connection a{color: white;}
+#connection a:hover{color: rgb(247,184,37);}
+section{
+    display: flex;
+    height: 100vh;
+}
+#inside{
+    margin: auto;
+}
+i{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.squareLeft, .squareRight{
+    color: white;
+    font-weight: normal;
+}
+@media only screen and (max-width: 600px) {
+    .square{
+        width: 80vw;
+    }
+}
