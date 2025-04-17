@@ -1,5 +1,6 @@
 <?php
 include('header.php');
+include('footer.php');
 require('env.php');
 
 // Traitement de l'ajout d'une règle
@@ -60,28 +61,85 @@ if (isset($_GET['delete'])) {
 </form>
 
 <hr>
-
-<h2>Liste des apprenants avec leur niveau d'accès</h2>
-<table border="1" cellpadding="10">
-    <tr>
-        <th>ID</th>
-        <th>Email</th>
-        <th>Niveau d'accès</th>
-    </tr>
-    <?php
-    $sql = "SELECT Id_Utilisateur, Email, NiveauAcces FROM Apprenant";
-    $stmt = sqlsrv_query($conn, $sql);
-    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        echo '<tr>';
-        echo '<td>' . $row['Id_Utilisateur'] . '</td>';
-        echo '<td>' . htmlspecialchars($row['Email']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['NiveauAcces']) . '</td>';
-        echo '</tr>';
+<style>
+    .access-table-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
     }
-    ?>
-</table>
 
-<p><a href="index.php">Retour</a></p>
+    .access-table-container h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .access-table {
+        border-collapse: collapse;
+        width: 80%;
+        background-color: #1e1e1e;
+        color: #ffffff;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .access-table th,
+    .access-table td {
+        padding: 12px 20px;
+        border: 1px solid #444;
+        text-align: center;
+    }
+
+    .access-table th {
+        background-color: #333;
+        font-weight: bold;
+    }
+
+    .access-table tr:hover {
+        background-color: #2c2c2c;
+    }
+
+    .back-link {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .back-link a {
+        color: #6cb4ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="access-table-container">
+    <h2>Liste des apprenants avec leur niveau d'accès</h2>
+    <table class="access-table">
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Niveau d'accès</th>
+        </tr>
+        <?php
+        $sql = "SELECT Id_Utilisateur, Email, NiveauAcces FROM Apprenant";
+        $stmt = sqlsrv_query($conn, $sql);
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            echo '<tr>';
+            echo '<td>' . $row['Id_Utilisateur'] . '</td>';
+            echo '<td>' . htmlspecialchars($row['Email']) . '</td>';
+            echo '<td>' . htmlspecialchars($row['NiveauAcces']) . '</td>';
+            echo '</tr>';
+        }
+        ?>
+    </table>
+
+    <div class="back-link">
+        <p><a href="index.php">⬅ Retour</a></p>
+    </div>
+</div>
+
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 include('header.php');
+include('footer.php');
 
 $isConnected = isset($_COOKIE['mail']) || isset($_SESSION['mail']);
 if (!$isConnected) {

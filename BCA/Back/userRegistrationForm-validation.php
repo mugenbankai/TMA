@@ -52,14 +52,14 @@ if (isset($_POST["valid"])) {
             }
 
             // (Optionnel) Insertion dans la base directement ici si tu ne fais pas de confirmation par mail
-            
+
             $sqlInsert = "INSERT INTO Apprenant (Email, MotDePasse, NiveauAcces) VALUES (?, ?, ?)";
             $paramsInsert = array($mail, $pwd, 0);
             $stmtInsert = sqlsrv_query($conn, $sqlInsert, $paramsInsert);
             if ($stmtInsert === false) {
                 die(print_r(sqlsrv_errors(), true));
             }
-            
+
         } else {
             $return = '<span style="color:red">Mail déjà inscrit</span>';
         }

@@ -29,32 +29,29 @@ if ($isConnected) {
 
 ?>
 
-<div class="d-flex flex-column gap-3 mt-5">
-	<div>
-		<h1 class="mb-5">Bonsai Coach Academie</h1>
-		<p class="text-light">Plateforme d'apprentissage de <em>l'art du bonsaï</em></p>
-	</div>
-	<div class="d-flex flex-column">
-		<h1 id="community" class="fs-1 mb-3">Mes parcours & badges</h1>
-		<?php
-		if ($isConnected) {
-			displayCoursesList($accessCodeArrayed);
-		}
-
-		?>
-	</div>
-
-	<h1 id="Courses">Badges disponibles</h1>
-	<ul id="badges-list" class="text-light">
-		<li><i class="fa fa-graduation-cap"></i> Apprenti</li>
-		<li><i class="fa fa-handshake"></i> Compagnon</li>
-		<li><i class="fa fa-hand-holding"></i> Passeur</li>
-		<li><i class="fa fa-star"></i> Guide</li>
-	</ul>
-	<p class="text-light">Copyright 2024 © EPSI Lille</p>
-
+<!-- <div class="d-flex flex-column gap-3 mt-5"> -->
+<div>
+	<h1 class="mt-2">Bonsai Coach Academie</h1>
+	<p class="text-light">Plateforme d'apprentissage de <em>l'art du bonsaï</em></p>
 </div>
-<?php include('footer.php'); ?>
-</body>
+<div class="d-flex flex-column">
+	<h1 id="community" class="fs-1 mb-3">Mes parcours & badges</h1>
+	<?php
+	if ($isConnected) {
+		displayCoursesList($accessCodeArrayed);
+	}
 
-</html>
+	?>
+</div>
+
+<h1 id="Courses" class="mb-3">Badges disponibles</h1>
+<ul id="badges-list" class="text-light mt-4">
+	<li><i class="fa fa-graduation-cap"></i> Apprenti</li>
+	<li><i class="fa fa-handshake"></i> Compagnon</li>
+	<li><i class="fa fa-hand-holding"></i> Passeur</li>
+	<li><i class="fa fa-star"></i> Guide</li>
+</ul>
+<p class="text-light mt-4">Copyright 2024 © EPSI Lille</p>
+
+<!-- </div> -->
+<?php include('footer.php'); ?>
