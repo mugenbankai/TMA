@@ -24,22 +24,22 @@ $idModule = getModuleIdFromCourseChallenge($course, $challenge, $conn);
 
 // Débogage : affiche les informations sur le module et l'utilisateur
 // (À retirer en production)
-echo "<pre style='color:yellow'>";
-echo "DEBUG MODULE: course=$course challenge=$challenge<br>";
-echo "Module ID: " . ($idModule ?? 'null') . "<br>";
+// echo "<pre style='color:yellow'>";
+// echo "DEBUG MODULE: course=$course challenge=$challenge<br>";
+// echo "Module ID: " . ($idModule ?? 'null') . "<br>";
 
-if ($idModule) {
-  $stmt = sqlsrv_query($conn, "SELECT CodeAcces FROM Module WHERE id_Module = ?", array($idModule));
-  $mod = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-  echo "CodeAcces du module : " . ($mod['CodeAcces'] ?? 'non trouvé') . "<br>";
-}
+// if ($idModule) {
+//   $stmt = sqlsrv_query($conn, "SELECT CodeAcces FROM Module WHERE id_Module = ?", array($idModule));
+//   $mod = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+//   echo "CodeAcces du module : " . ($mod['CodeAcces'] ?? 'non trouvé') . "<br>";
+// }
 
-echo "Utilisateur ID: $idUser<br>";
+// echo "Utilisateur ID: $idUser<br>";
 
-$stmt2 = sqlsrv_query($conn, "SELECT NiveauAcces FROM Apprenant WHERE Id_Utilisateur = ?", array($idUser));
-$user = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
-echo "NiveauAcces de l'utilisateur : " . ($user['NiveauAcces'] ?? 'non trouvé') . "<br>";
-echo "</pre>";
+// $stmt2 = sqlsrv_query($conn, "SELECT NiveauAcces FROM Apprenant WHERE Id_Utilisateur = ?", array($idUser));
+// $user = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
+// echo "NiveauAcces de l'utilisateur : " . ($user['NiveauAcces'] ?? 'non trouvé') . "<br>";
+// echo "</pre>";
 
 
 // 🔒 Vérifie si l'utilisateur a le droit d'accéder à ce module
@@ -66,7 +66,7 @@ $work[2][1] = 'Bonsaï en extérieur';
 $work[2][2] = 'Préparation aux concours';
 // ... (autres lignes inchangées)
 
-include('bcaAccessCodeSystem.php');
+// include('bcaAccessCodeSystem.php');
 
 echo '<h2>Description du travail</h2>';
 echo '<p><strong>Parcours actuel :</strong> ' . $$courseLabel . '</p>';
